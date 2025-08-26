@@ -156,11 +156,11 @@ export default function Page() {
             subtitle: '중복 선택 가능',
             required: true,
             options: [
-                { id: 'health', label: '건강/질병' },
-                { id: 'family', label: '가족/관계' },
-                { id: 'work', label: '경제/일' },
-                { id: 'meaning', label: '삶의 의미/자아실현' },
-                { id: 'anxiety', label: '막연한 불안/우울감' },
+                { id: 'health',   label: '건강/불면' },
+                { id: 'family',   label: '가족/관계' },
+                { id: 'work',     label: '경제/일' },
+                { id: 'meaning',  label: '삶의 의미/자아실현' },
+                { id: 'anxiety',  label: '막연한 불안/우울감' },
             ],
             allowOther: true,
         },
@@ -170,12 +170,13 @@ export default function Page() {
             subtitle: '중복 선택 가능',
             required: true,
             options: [
-                { id: 'counseling', label: '상담 (전문가 상담 포함)' },
-                { id: 'group', label: '소규모 그룹 활동' },
-                { id: 'community', label: '온라인 커뮤니티' },
-                { id: 'media', label: '영상/오디오 콘텐츠' },
-                { id: 'programs', label: '오프라인 프로그램' },
-                { id: 'individual', label: '개인 맞춤형 프로그램' },
+                { id: 'ai_chat',       label: 'AI 상담 (언제든 간단하게 대화 가능)' },
+                { id: 'expert_counsel',label: '전문가 상담 (심리상담사/코치와 1:1)' },
+                { id: 'group',         label: '소규모 그룹 활동 (비슷한 상황의 여성들과 함께)' },
+                { id: 'community',     label: '온라인 커뮤니티 (익명/비밀 대화 및 경험 공유)' },
+                { id: 'record',        label: '콘텐츠 기록학습 (영상, 오디오, 글 등으로 배우기)' },
+                { id: 'offline',       label: '오프라인 치유 프로그램 (요가, 명상, 아트테라피 등)' },
+                { id: 'individual',    label: '맞춤형 프로그램 (개인 상태에 따라 매번 실천할 것)' },
             ],
         },
         {
@@ -184,15 +185,16 @@ export default function Page() {
             subtitle: '중복 선택 가능',
             required: true,
             options: [
-                { id: 'guide', label: '명상/호흡법 오디오 가이드' },
-                { id: 'journal', label: '감사 일기/감정 기록 도구' },
-                { id: 'asmr', label: '자유 음악/ASMR/자연 소리' },
-                { id: 'stories', label: '실제 사례/스토리텔링 콘텐츠' },
-                { id: 'expert', label: '전문가 강의/라이브 Q&A' },
-                { id: 'program', label: '특정 기분맞춤 프로그램' },
+                { id: 'guide',     label: '명상/호흡법 오디오 가이드' },
+                { id: 'journal',   label: '감사 일기/감정 기록 도구' },
+                { id: 'asmr',      label: '치유 음악/ASMR/자연 소리' },
+                { id: 'stories',   label: '실제 사례/스토리텔링 콘텐츠' },
+                { id: 'expert',    label: '전문가 강의/라이브 Q&A' },
+                { id: 'program',   label: '특정 기분/증상 맞춤형 힐링 프로그램' },
             ],
         },
     ]
+
 
     return <PretotypeSurvey questions={questions} />
 }
