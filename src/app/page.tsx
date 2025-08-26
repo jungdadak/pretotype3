@@ -189,7 +189,7 @@ export default function Page() {
         },
         {
             id: 'content',
-            title: '만약 마음챙김 컨텐츠를 받아보신다면, \n 어떤 콘텐츠가 가장 \n 도움이 될 것 같으신가요?',
+            title: '만약 마음챙김 컨텐츠를 \n받아보신다면, 어떤 콘텐츠가 \n가장 도움이 될 것 같으신가요?',
             subtitle: '중복 선택 가능',
             required: true,
             options: [
