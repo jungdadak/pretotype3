@@ -5,7 +5,7 @@
 import { useState } from 'react'
 import Head from 'next/head'
 
-type SurveyOption = { id: string; label: string }
+type SurveyOption = { id: string; label: React.ReactNode }
 export type SurveyQuestion = {
     id: string
     title: string
@@ -179,13 +179,12 @@ export default function Page() {
             subtitle: '중복 선택 가능',
             required: true,
             options: [
-                { id: 'ai_chat',       label: 'AI 상담 (언제든 간단하게 대화 가능)' },
-                { id: 'expert_counsel',label: '전문가 상담 (심리상담사/코치와 1:1)' },
-                { id: 'group',         label: '소규모 그룹 활동 (비슷한 상황의 여성들과 함께)' },
-                { id: 'community',     label: '온라인 커뮤니티 (익명/비밀 대화 및 경험 공유)' },
-                { id: 'record',        label: '콘텐츠 기록학습 (영상, 오디오, 글 등으로 배우기)' },
-                { id: 'offline',       label: '오프라인 치유 프로그램 (요가, 명상, 아트테라피 등)' },
-                { id: 'individual',    label: '맞춤형 루틴 프로그램 (개인 상태에 따라 매번 실천할 것)' },
+                { id: 'ai_chat', label: (<><div>AI 상담</div><div className="text-sm text-neutral-400">(언제든 간단하게 대화 가능)</div></>) },
+                { id: 'expert_counsel', label: (<><div>전문가 상담</div><div className="text-sm text-neutral-400">(심리상담사/코치와 1:1)</div></>) },
+                { id: 'community', label: (<><div>온라인 커뮤니티</div><div className="text-sm text-neutral-400">(익명/비밀 대화 및 경험 공유)</div></>) },
+                { id: 'record', label: (<><div>마음챙김 컨텐츠 즐기기</div><div className="text-sm text-neutral-400">(영상, 오디오, 글 등으로 배우기)</div></>) },
+                { id: 'offline', label: (<><div>오프라인 치유 프로그램</div><div className="text-sm text-neutral-400">(요가, 명상, 아트테라피, 그룹상담 등)</div></>) },
+                { id: 'individual', label: (<><div>맞춤형 루틴 프로그램</div><div className="text-sm text-neutral-400">(개인 상태에 따라 매번 실천할 것)</div></>) },
             ],
         },
         {
