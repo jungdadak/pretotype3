@@ -161,7 +161,7 @@ export default function Page() {
     const questions: SurveyQuestion[] = [
         {
             id: 'needs',
-            title: '현재 마음챙김이 필요하다고 느끼는 주요 이유는 무엇인가요?',
+            title: '현재 마음챙김이 필요하다고\n 느끼는 주요 이유는\n 무엇인가요?',
             subtitle: '중복 선택 가능',
             required: true,
             options: [
@@ -175,7 +175,7 @@ export default function Page() {
         },
         {
             id: 'format',
-            title: '마음챙김 서비스를 어떤 형태로 받고 싶으신가요?',
+            title: '마음챙김 서비스를\n 어떤 형태로\n 받고 싶으신가요?',
             subtitle: '중복 선택 가능',
             required: true,
             options: [
@@ -189,7 +189,7 @@ export default function Page() {
         },
         {
             id: 'content',
-            title: '만약 마음챙김 컨텐츠를 받아보신다면, 어떤 콘텐츠가 가장 도움이 될 것 같으신가요?',
+            title: '만약 마음챙김 컨텐츠를 받아보신다면, \n 어떤 콘텐츠가 가장 \n 도움이 될 것 같으신가요?',
             subtitle: '중복 선택 가능',
             required: true,
             options: [
@@ -213,6 +213,12 @@ function PretotypeSurvey({ questions }: PretotypeSurveyProps) {
     const [answers, setAnswers] = useState<Record<string, string[]>>({})
     const [others, setOthers] = useState<Record<string, string>>({})
 
+    const pack = (qid: string) => {
+        const arr = answers[qid] ?? []
+        const other = (others[qid] ?? '').trim()
+        return other ? [...arr, `기타:${other}`].join(', ') : arr.join(', ')
+    }
+
     const current = typeof step === 'number' ? questions[step] : null
 
     const toggle = (qid: string, optId: string) => {
@@ -230,12 +236,15 @@ function PretotypeSurvey({ questions }: PretotypeSurveyProps) {
             setStep(step + 1)
         } else if (typeof step === 'number' && step === questions.length - 1) {
             setStep('thanks')
+
+            // ✅ 기타 의견까지 합쳐서 전송
             const payload = {
                 email,
-                reason_mindfulness: (answers['needs'] ?? []).join(', ') || '',
-                preferred_service_format: (answers['format'] ?? []).join(', ') || '',
-                preferred_content_type: (answers['content'] ?? []).join(', ') || '',
+                reason_mindfulness: pack('needs'),
+                preferred_service_format: pack('format'),
+                preferred_content_type: pack('content'),
             }
+
             try {
                 await fetch('/api/survey', {
                     method: 'POST',
