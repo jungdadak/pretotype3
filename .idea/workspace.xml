@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="29ee3421-19f1-4143-bf57-beb234df3f21" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/bg2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/bg3.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +44,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/PC/pretotype-v3/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +54,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\pretotype-v3\public" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,7 +76,7 @@
       <updated>1756203610648</updated>
       <workItem from="1756203612010" duration="3090000" />
       <workItem from="1756207057988" duration="1464000" />
-      <workItem from="1756211721973" duration="1123000" />
+      <workItem from="1756211721973" duration="1603000" />
     </task>
     <servers />
   </component>

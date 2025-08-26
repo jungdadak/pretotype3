@@ -23,6 +23,7 @@ type PretotypeSurveyProps = {
 const cn = (...cls: (string | false | undefined)[]) => cls.filter(Boolean).join(' ')
 
 /** Intro 화면 */
+/** Intro 화면 */
 function Intro({ email, setEmail, onNext }: { email: string; setEmail: (v: string) => void; onNext: () => void }) {
     // 간단 이메일 정규식 벨리데이션
     const isValidEmail = (email: string) => /^[\w._%+-]+@[\w.-]+\.[A-Za-z]{2,}$/.test(email.trim())
@@ -30,25 +31,32 @@ function Intro({ email, setEmail, onNext }: { email: string; setEmail: (v: strin
 
     return (
         <div className="space-y-8 text-center animate-fadeIn">
+            {/* 아이콘 영역 */}
+            <div className="flex justify-center">
+                <img src="/logo.ico" alt="서비스 아이콘" className="w-20 h-20 mb-4 rounded-3xl" />
+            </div>
+
             <p className="text-lg leading-relaxed whitespace-pre-line text-neutral-100">
                 {`우리는 40~50대 여성분들을 위한\n마음챙김 서비스를 기획중이에요.\n\n선생님이 느끼는\n외로움, 불안, 우울감을\n우리와 공유해주신다면 추첨을 통해\n커피 쿠폰 1장을 보내드려요.`}
             </p>
+
             <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="이메일을 입력해 주세요"
-                className="w-full rounded-2xl px-5 py-3 text-white text-lg shadow-md
-                   placeholder:text-neutral-500 placeholder:text-center
-                   focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full rounded-2xl px-5 py-3 text-lg shadow-md
+                   placeholder:text-cyan-300 placeholder:text-center text-neutral-50 text-center
+                   focus:outline-none focus:ring-2 focus:ring-cyan-500"
             />
+
             <button
                 onClick={onNext}
                 disabled={disabled}
                 className={cn(
                     'w-full rounded-2xl py-3 font-bold text-lg tracking-wide shadow-lg transition text-white',
                     disabled
-                        ? 'bg-green-300 cursor-not-allowed'
+                        ? 'bg-green-300 '
                         : 'bg-green-600 hover:bg-green-500'
                 )}
             >
@@ -57,6 +65,7 @@ function Intro({ email, setEmail, onNext }: { email: string; setEmail: (v: strin
         </div>
     )
 }
+
 
 /** 질문 화면 */
 function QuestionStep({
@@ -176,7 +185,7 @@ export default function Page() {
                 { id: 'community',     label: '온라인 커뮤니티 (익명/비밀 대화 및 경험 공유)' },
                 { id: 'record',        label: '콘텐츠 기록학습 (영상, 오디오, 글 등으로 배우기)' },
                 { id: 'offline',       label: '오프라인 치유 프로그램 (요가, 명상, 아트테라피 등)' },
-                { id: 'individual',    label: '맞춤형 프로그램 (개인 상태에 따라 매번 실천할 것)' },
+                { id: 'individual',    label: '맞춤형 루틴 프로그램 (개인 상태에 따라 매번 실천할 것)' },
             ],
         },
         {
