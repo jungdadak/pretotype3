@@ -38,7 +38,7 @@ function Intro({ email, setEmail, onNext }: { email: string; setEmail: (v: strin
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="이메일을 입력해 주세요"
-                className="w-full rounded-2xl px-5 py-3 text-black text-lg shadow-md
+                className="w-full rounded-2xl px-5 py-3 text-white text-lg shadow-md
                    placeholder:text-neutral-500 placeholder:text-center
                    focus:outline-none focus:ring-2 focus:ring-green-500"
             />
