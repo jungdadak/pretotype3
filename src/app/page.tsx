@@ -118,7 +118,7 @@ function QuestionStep({
                     placeholder="기타 의견"
                     value={other}
                     onChange={(e) => setOther(e.target.value)}
-                    className="w-full rounded-2xl px-5 py-3 text-black text-lg shadow-md
+                    className="w-full rounded-2xl px-5 py-3 text-white text-lg shadow-md
                      placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-green-500"
                 />
             )}
@@ -189,7 +189,7 @@ export default function Page() {
         },
         {
             id: 'content',
-            title: '어떤 콘텐츠가 가장 도움이 될 것 같으신가요?',
+            title: '만약 마음챙김 컨텐츠를 받아보신다면, 어떤 콘텐츠가 가장 도움이 될 것 같으신가요?',
             subtitle: '중복 선택 가능',
             required: true,
             options: [
